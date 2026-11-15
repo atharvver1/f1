@@ -1,0 +1,5 @@
+.venv/
+data/f1db/
+__pycache__/
+*.pyc
+.DS_Store
