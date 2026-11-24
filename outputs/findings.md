@@ -1,6 +1,6 @@
 # Findings
 
-Test set: 272 races, 2014 to 2026-20 (round 20 of the 2026 season). Every prediction was made with a model that had only seen earlier races.
+Test set: 273 races, 2014 to 2026-21 (round 21 of the 2026 season). Every prediction was made with a model that had only seen earlier races.
 
 ## Q1 + Q2. Models vs baselines, day by day
 
@@ -10,13 +10,13 @@ Retrained before every race. Log loss: lower is better.
 |:-------------------------------|:----------------|:---------------------|:---------------------|-----------------:|--------------------:|
 | Thursday / Simple baseline     | 37%             | 52%                  | 72%                  |            0.141 |               0.288 |
 | Thursday / Logistic regression | 45%             | 59%                  | 75%                  |            0.121 |               0.247 |
-| Thursday / Gradient boosting   | 42%             | 60%                  | 75%                  |            0.123 |               0.247 |
-| Friday / Simple baseline       | 46%             | 56%                  | 74%                  |            0.135 |               0.278 |
+| Thursday / Gradient boosting   | 42%             | 59%                  | 75%                  |            0.123 |               0.247 |
+| Friday / Simple baseline       | 45%             | 56%                  | 74%                  |            0.136 |               0.279 |
 | Friday / Logistic regression   | 45%             | 62%                  | 76%                  |            0.117 |               0.24  |
-| Friday / Gradient boosting     | 43%             | 60%                  | 75%                  |            0.118 |               0.241 |
-| Saturday / Simple baseline     | 55%             | 69%                  | 76%                  |            0.112 |               0.231 |
-| Saturday / Logistic regression | 50%             | 69%                  | 78%                  |            0.105 |               0.215 |
-| Saturday / Gradient boosting   | 56%             | 68%                  | 78%                  |            0.101 |               0.21  |
+| Friday / Gradient boosting     | 44%             | 60%                  | 75%                  |            0.118 |               0.241 |
+| Saturday / Simple baseline     | 55%             | 69%                  | 76%                  |            0.112 |               0.232 |
+| Saturday / Logistic regression | 50%             | 69%                  | 78%                  |            0.105 |               0.216 |
+| Saturday / Gradient boosting   | 56%             | 68%                  | 78%                  |            0.1   |               0.211 |
 
 ## Q3. Does the model survive a rule reset?
 
@@ -25,11 +25,11 @@ Logistic regression, retrained before every race. Reset seasons in the test set:
 | Day | Rounds | Podium picks right: stable | reset | Gap (90% interval) | Races: stable / reset |
 |---|---|---|---|---|---|
 | Thursday | 1-4 | 74% | 54% | -20 pts (-29 to -10) | 36 / 16 |
-| Thursday | 5+ | 60% | 52% | -8 pts (-13 to -2) | 155 / 65 |
+| Thursday | 5+ | 60% | 52% | -8 pts (-13 to -3) | 155 / 66 |
 | Friday | 1-4 | 75% | 60% | -15 pts (-27 to -2) | 36 / 16 |
-| Friday | 5+ | 61% | 57% | -4 pts (-9 to +1) | 155 / 65 |
+| Friday | 5+ | 61% | 57% | -4 pts (-9 to +1) | 155 / 66 |
 | Saturday | 1-4 | 79% | 71% | -8 pts (-19 to +3) | 36 / 16 |
-| Saturday | 5+ | 68% | 65% | -3 pts (-8 to +3) | 155 / 65 |
+| Saturday | 5+ | 68% | 65% | -3 pts (-8 to +3) | 155 / 66 |
 
 Thursday podium picks by season (reset seasons: 2014, 2017, 2022, 2026):
 
@@ -69,10 +69,10 @@ Rounds 1-4 only, all seasons from 2008. Average rank correlation between the fea
 |                                         | Podium picks right: frozen   | Podium picks right: updating   |   Log loss (podium): frozen |   Log loss (podium): updating |
 |:----------------------------------------|:-----------------------------|:-------------------------------|----------------------------:|------------------------------:|
 | Reset / Thursday / Logistic regression  | 52%                          | 52%                            |                       0.253 |                         0.247 |
-| Reset / Thursday / Gradient boosting    | 50%                          | 53%                            |                       0.255 |                         0.242 |
-| Reset / Friday / Logistic regression    | 56%                          | 58%                            |                       0.24  |                         0.235 |
-| Reset / Friday / Gradient boosting      | 57%                          | 56%                            |                       0.236 |                         0.231 |
-| Reset / Saturday / Logistic regression  | 66%                          | 66%                            |                       0.217 |                         0.211 |
+| Reset / Thursday / Gradient boosting    | 50%                          | 53%                            |                       0.255 |                         0.243 |
+| Reset / Friday / Logistic regression    | 55%                          | 57%                            |                       0.241 |                         0.236 |
+| Reset / Friday / Gradient boosting      | 57%                          | 56%                            |                       0.237 |                         0.232 |
+| Reset / Saturday / Logistic regression  | 66%                          | 66%                            |                       0.219 |                         0.214 |
 | Reset / Saturday / Gradient boosting    | 65%                          | 65%                            |                       0.209 |                         0.204 |
 | Stable / Thursday / Logistic regression | 61%                          | 62%                            |                       0.249 |                         0.247 |
 | Stable / Thursday / Gradient boosting   | 60%                          | 62%                            |                       0.258 |                         0.248 |
@@ -105,3 +105,4 @@ Rounds 1-4 only, all seasons from 2008. Average rank correlation between the fea
 |      18 | no                 |                              2 | no                 |                              3 |
 |      19 | yes                |                              2 | yes                |                              1 |
 |      20 | no                 |                              1 | no                 |                              2 |
+|      21 | yes                |                              1 | yes                |                              2 |

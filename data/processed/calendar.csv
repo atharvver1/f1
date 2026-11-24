@@ -418,6 +418,6 @@ season,round,race_id,date,grand_prix,circuit,circuit_type,sprint_weekend,has_res
 2026,18,2026-18,2026-10-25,united-states,austin,RACE,False,True
 2026,19,2026-19,2026-11-01,mexico,mexico-city,RACE,False,True
 2026,20,2026-20,2026-11-08,sao-paulo,interlagos,RACE,False,True
-2026,21,2026-21,2026-11-22,las-vegas,las-vegas,STREET,False,False
+2026,21,2026-21,2026-11-22,las-vegas,las-vegas,STREET,False,True
 2026,22,2026-22,2026-11-29,qatar,lusail,RACE,False,False
 2026,23,2026-23,2026-12-06,abu-dhabi,yas-marina,RACE,False,False
